@@ -53,7 +53,8 @@ static _GLFWinitconfig _glfwInitHints =
     GLFW_TRUE,      // hat buttons
     {
         GLFW_TRUE,  // macOS menu bar
-        GLFW_TRUE   // macOS bundle chdir
+        GLFW_TRUE,  // macOS bundle chdir
+        GLFW_TRUE   // macOS use joysticks
     }
 };
 
@@ -366,6 +367,9 @@ GLFWAPI void glfwInitHint(int hint, int value)
             return;
         case GLFW_COCOA_MENUBAR:
             _glfwInitHints.ns.menubar = value;
+            return;
+        case GLFW_COCOA_USE_JOYSTICKS:
+            _glfwInitHints.ns.useJoysticks = value;
             return;
     }
 

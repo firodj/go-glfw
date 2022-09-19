@@ -565,7 +565,10 @@ int _glfwPlatformInit(void)
         return GLFW_FALSE;
 
     _glfwInitTimerNS();
-    _glfwInitJoysticksNS();
+
+    if (_glfw.hints.init.ns.useJoysticks) {
+        _glfwInitJoysticksNS();
+    }
 
     _glfwPollMonitorsNS();
     return GLFW_TRUE;

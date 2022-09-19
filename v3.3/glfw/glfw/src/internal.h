@@ -243,6 +243,7 @@ struct _GLFWinitconfig
     struct {
         GLFWbool  menubar;
         GLFWbool  chdir;
+        GLFWbool  useJoysticks;
     } ns;
 };
 
